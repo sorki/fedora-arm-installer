@@ -1,3 +1,15 @@
+# NOVENA TEMPORARY fixes included
+#
+wget -nc http://48.io/~rmarko/novena/v1/SPL
+wget -nc http://48.io/~rmarko/novena/v1/u-boot.img
+wget -nc http://48.io/~rmarko/novena/v1/imx6q-novena.dtb
+
+sudo cp -v SPL "$PREFIX/usr/share/uboot/$TARGET/SPL"
+sudo cp -v u-boot.img "$PREFIX/usr/share/uboot/$TARGET/u-boot.img"
+sudo cp -v imx6q-novena.dtb /tmp/boot/dtb-*/
+
+# /NOVENA TEMPORARY
+
 if [ -f "$PREFIX/usr/share/uboot/$TARGET/SPL" ]; then
 # write a SPL uboot if it's present
 echo "= Writing SPL ...."
